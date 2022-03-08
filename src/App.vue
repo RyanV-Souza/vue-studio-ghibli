@@ -29,7 +29,7 @@ export default {
     };
   },
   mounted() {
-    axios.get("https://ghibliapi.herokuapp.com/films").then((res) => {
+    axios.get("https://ghibliapi.herokuapp.com/films?name").then((res) => {
       let films = res.data;
 
       this.films = films.map((film) => {
