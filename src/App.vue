@@ -17,6 +17,17 @@ export default {
       films: [],
     };
   },
-  mounted() {},
+  mounted() {
+    axios.get("https://ghibliapi.herokuapp.com/films").then((res) => {
+      let films = res.data;
+
+      this.films = films.map((film) => {
+        return {
+          title: film.title,
+          description: film.description,
+        };
+      });
+    });
+  },
 };
 </script>
