@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-
+    <CardFilm
+      v-for="(film, index) in films"
+      :key="index"
+      :title="film.title"
+      :description="film.description"
+    > </CardFilm>
   </div>
 </template>
 
